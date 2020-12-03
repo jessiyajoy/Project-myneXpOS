@@ -1,0 +1,11 @@
+// prepare the secondary core of the machine for executing the processes
+
+// store entry point
+[83*512] = [69*512 + 1];
+
+SP = 4096;
+
+PTBR = PAGE_TABLE_BASE + 14*20;
+PTLR = 10;
+
+ireturn;

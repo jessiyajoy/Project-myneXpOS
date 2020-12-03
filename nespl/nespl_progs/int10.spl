@@ -1,0 +1,27 @@
+// KERN_LOCK must be acquired by invoking AcquireKernLock() function
+R1 = ACQUIRE_KERN_LOCK;
+call ACCESS_CONTROL;
+
+
+//Mode
+[PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 5*CORE + 1] * 16 + 9] = 10;
+
+//--Switch Stack
+//save user SP, set SP to KPTR
+[PROCESS_TABLE + ( [SYSTEM_STATUS_TABLE + 5*CORE + 1] * 16) + 13] = SP;
+SP = [PROCESS_TABLE + ([SYSTEM_STATUS_TABLE + 5*CORE + 1]] * 16) + 11] * 512 - 1;
+R4 = [PROCESS_TABLE + [SYSTEM_STATUS_TABLE + 5*CORE + 1] * 16 + 9];
+R1 = 3;
+R2 = [SYSTEM_STATUS_TABLE + 5*CORE + 1];
+print "EXIT PID";
+print [SYSTEM_STATUS_TABLE + 5*CORE + 1];
+call MOD_1;
+
+// RELEASE KERNEL LOCK 
+multipush(R1,R2);
+R1 = RELEASE_LOCK;
+R2 = KERN_LOCK;
+call ACCESS_CONTROL;
+multipop(R1,R2);
+
+call SCHEDULER;

@@ -1,0 +1,33 @@
+load --os=primary ../nespl/nespl_progs/os_startup1.xsm
+load --os=secondary ../nespl/nespl_progs/os_startup2.xsm
+load --shell ../expl/expl_progs/26/extShell.xsm
+load --init ../expl/expl_progs/26/login.xsm
+load --idle ../expl/expl_progs/idle_st12.xsm
+load --module 0 ../nespl/nespl_progs/resourcemanager0.xsm
+load --module 1 ../nespl/nespl_progs/processmanager1.xsm
+load --module 2 ../nespl/nespl_progs/memorymanager2.xsm
+load --module 3 ../nespl/nespl_progs/filemanager3.xsm
+load --module 4 ../nespl/nespl_progs/devicemanager4.xsm
+load --module 5 ../nespl/nespl_progs/scheduler5.xsm
+load --module 6 ../nespl/nespl_progs/pager6.xsm
+load --module 7 ../nespl/nespl_progs/bootmodule7.xsm
+load --module 8 ../nespl/nespl_progs/accessControl8.xsm
+load --int=4 ../nespl/nespl_progs/int4.xsm
+load --int=5 ../nespl/nespl_progs/int5.xsm
+load --int=6 ../nespl/nespl_progs/int6.xsm
+load --int=7 ../nespl/nespl_progs/int7.xsm
+load --int=8 ../nespl/nespl_progs/int8.xsm
+load --int=9 ../nespl/nespl_progs/int9.xsm
+load --int=10 ../nespl/nespl_progs/int10.xsm
+load --int=11 ../nespl/nespl_progs/int11.xsm
+load --int=12 ../nespl/nespl_progs/int12.xsm
+load --int=13 ../nespl/nespl_progs/int13.xsm
+load --int=14 ../nespl/nespl_progs/int14.xsm
+load --int=15 ../nespl/nespl_progs/int15.xsm
+load --int=16 ../nespl/nespl_progs/int16.xsm
+load --int=17 ../nespl/nespl_progs/int17.xsm
+load --int=timer ../nespl/nespl_progs/timer.xsm
+load --int=console  ../nespl/nespl_progs/console.xsm
+load --int=disk  ../nespl/nespl_progs/diskint.xsm
+load --exhandler ../nespl/nespl_progs/exception_handler.xsm
+load --library ../expl/library.lib
